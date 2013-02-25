@@ -44,8 +44,12 @@ command! Bw :bnext \| bdelete #
 map <kPlus> <C-W>+
 map <kMinus> <C-W>-
 
-" 前回終了したカーソル行に移動
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+"perl編集関連
+map ,pt <Esc>:%! perltidy -se<CR>
+map ,ptv <Esc>:'<,'>! perltidy -se<CR>
+map <F5> :w !perl<CR>
+map <F6> :!perl %<CR>
+map ,t :!prove -lv % \|less
 
 " 最後に編集された位置に移動
 nnoremap gb '[
