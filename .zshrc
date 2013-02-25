@@ -201,6 +201,9 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/s
 zstyle ':completion:*' list-colors di=34 fi=0
 #zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+# 補完候補を選択表示する
+zstyle ':completion:*:default' menu select=1
+
 # 複数のリダイレクトやパイプなど、必要に応じて tee や cat の機能が使われる
 setopt multios
 
